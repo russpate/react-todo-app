@@ -5,14 +5,15 @@ export default class TodoInput extends React.Component {
     constructor(props){
         super(props)
         // also used is set.state but set will trigger render
-        this.state = {value: "foo"};
+        // handleChange needs the state from here
+        this.state = {value: ""};
 
         this.handleChange = this.handleChange.bind(this);
         this.addToDo = this.addToDo.bind(this);
     }
 
-    handleChange(param){
-        console.log("boom changed");
+    handleChange(e){
+        this.setState({value: e.target.value});
     }
     addToDo(todo){
         if (todo.length > 0){
@@ -24,7 +25,7 @@ export default class TodoInput extends React.Component {
     render(){
         return(
             <div>
-                <input type="text" value="" onChange={this.handleChange} />
+                <input type="text" placeholder="enter item" value={this.state.value} onChange={this.handleChange} />
                 <button className="button" onClick={() => this.addToDo(this.state.value)}>Add</button>
             </div>
         );

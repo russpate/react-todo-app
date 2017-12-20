@@ -1,0 +1,13 @@
+.itemWrapper {
+    width: 100%;
+    margin: 10px;
+    text-align: left;
+}
+
+button.removeButton {
+    margin-right: 10px;
+    border: none;
+    padding: 5px 10px;
+    background: #f1f1f1;
+    border-radius: 3px;
+}
