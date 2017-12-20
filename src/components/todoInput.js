@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './todoInput.css';
 
 export default class TodoInput extends React.Component {
     constructor(props){
@@ -14,13 +15,17 @@ export default class TodoInput extends React.Component {
         console.log("boom changed");
     }
     addToDo(todo){
-        console.log("boom added", todo)
+        if (todo.length > 0){
+            this.props.addToDo(todo);
+            // zeros out the value
+            this.setState({value:''});
+        }
     }
     render(){
         return(
             <div>
                 <input type="text" value="" onChange={this.handleChange} />
-                <button className="button" onClick={() => this.addToDo(this.state.value)}>Submit</button>
+                <button className="button" onClick={() => this.addToDo(this.state.value)}>Add</button>
             </div>
         );
     }
