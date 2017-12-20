@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default class Header extends React.Components{
+export default class TodoInput extends React.Components{
     render(){
         return(
-            
+
         );
     }
 }
