@@ -1,7 +1,7 @@
 .itemWrapper {
-    width: 100%;
     margin: 10px;
     text-align: left;
+    animation-duration: 1s;
 }
 
 button.removeButton {
